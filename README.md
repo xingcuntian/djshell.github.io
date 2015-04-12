@@ -1,34 +1,48 @@
-我的个人博客
-================
+---
+layout: default
+title: "首页：Home"
+---
+<h1 class="page-header">
+  <small>
+    {{ site.description }}
+  </small>
+</h1>
+<!-- Loop output paged posts -->
+{% for post in paginator.posts %}
+<h2>
+  <a href="{{ post.url }}">
+    {{ post.title }}
+  </a> 
+  <div class="post-date">
+	<span class="glyphicon glyphicon-time"></span>
+	{{ post.date | date_to_string }}
+  </div>
+</h2>
+<hr>
+{{ post.excerpt }}
+	<p> <a href="{{ post.url }}"><span >阅读全文 &raquo; </span></a></p>
+<hr>
+{% endfor %}
 
-####博客地址
-http://www.panxw.com  
-
-####使用本项目作为博客模板，仅需如下几步：
-1,首先Fork或Download一份本项目代码。  
-2,修改_config.yaml及about.md文件，以变更个人信息。  
-3,修改_include目录下相关文件，以配置网站统计(analytics.html)，网友评论(comment.html)，右侧栏目(categories.html)等。  
-4,修改CNAME文件，以绑定自己的域名。  
-5,删除_posts下文章，换成你自己的。  
-6,最后，push到你自己的博客Repo~  
-
- *^_^*如果愿意，Star本项目一个吧~  
-
-####本项目使用了
-1,CNZZ的网站统计服务，官网：http://cnzz.com  
-2,友言的网友评论服务，官网：http://www.uyan.cc  
-3,Google 的Adsense广告，官网：https://www.google.com/adsense/login/zh_CN  
-如需查看或管理网站统计、评论或广告，请自行注册帐号并修改_includes目录下相关文件。  
-
-####联系方式
-联系方式：qq(85902258), email(winfirm#163.com)  
-腾讯微博：http://t.qq.com/allthelucky  
-
-####使用本项目作模板的博客链接
-http://www.94geek.com  
-http://www.haidaoxiaofei.me  
-http://www.malphi.net  
-http://happyaround.com  
-http://tencentlocation.github.io  
-http://wtaps.github.io  
-(你的位置)  
+<!-- Pager indicator -->
+<ul class="pager">
+  {% if paginator.previous_page %} {% if paginator.previous_page == 1 %}
+  <li class="previous">
+    <a href="{{ site.url }}/">
+      &larr; Older
+    </a>
+  </li>
+  {% else %}
+  <li class="previous">
+    <a href="{{ site.url }}/page{{ paginator.previous_page }}">
+      &larr; Older
+    </a>
+  </li>
+  {% endif %} {% endif %} {% if paginator.next_page %}
+  <li class="next">
+    <a href="{{ site.url }}/page{{ paginator.next_page }}">
+      Newer &rarr;
+    </a>
+  </li>
+  {% endif %}
+</ul>
