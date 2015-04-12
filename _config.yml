@@ -11,7 +11,7 @@ paginate_path: "page:num"
 
 # presonal config
 domain: www.panxw.com
-title: Django's Blog
+title: djshell's Blog
 description: FreeBSD,Centos,Python,PHP,MySQL,Redis,MongoDB ......
 author: djshell
 email: djshell#sina.com
