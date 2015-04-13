@@ -43,3 +43,8 @@ tags: ["友盟统计"]
 </html>
 
 </pre>
+
+<code>  
+def hello()  
+    print "hello"  
+</code>  
