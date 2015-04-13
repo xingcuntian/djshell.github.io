@@ -30,6 +30,7 @@ tags: ["友盟统计"]
 
 ####三、实践这些原则
 ```
+
 #!/usr/bin/python2.7
  
 def fib():
@@ -53,8 +54,12 @@ def nth(series, n):
     n -= 1
     if n <= 0: return x
  
-print nth(fib(), 10)
+
  
-/* not a comment and not keywords: null char true */
+
+if __name__ == '__main__':
+	print('Executed from the command line')
+	print nth(fib(), 10)
+	
 ```
 
