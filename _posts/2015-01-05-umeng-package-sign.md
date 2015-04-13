@@ -29,7 +29,7 @@ tags: ["友盟统计"]
 - 以总结分享为荣 , 以跪求其解为耻;
 
 ####三、实践这些原则
-
+```
 #!/usr/bin/python2.4
  
 def fib():
@@ -56,4 +56,5 @@ def nth(series, n):
 print nth(fib(), 10)
  
 /* not a comment and not keywords: null char true */
+```
 
