@@ -1,6 +1,6 @@
 ---
 layout: post
-category: "android"
+category: "python"
 title: "python培训[1]"
 tags: ["友盟统计"]
 ---
