@@ -32,6 +32,8 @@ tags: ["友盟统计"]
 
 <pre class="prettyprint linenums">
     <!-- 包围其中 -->
-    def test:
+    import os 
+    
+    def test():
     	print os.mkdir()
 </pre>
