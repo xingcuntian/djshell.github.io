@@ -31,7 +31,7 @@ tags: ["友盟统计"]
 
 
 
-![Alt text](images/029_hooded_k_w_1.jpg "Optional title")
+![Alt text](/images/029_hooded_k_w_1.jpg)
 
 ####三、初步感观
 ```
