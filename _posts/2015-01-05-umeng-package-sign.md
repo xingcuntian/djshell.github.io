@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "android"
-title: "友盟统计正式包无数据问题"
+title: "python培训[1]"
 tags: ["友盟统计"]
 ---
 脚本下载：<http://pan.baidu.com/s/1jGDvFzo>  
@@ -30,28 +30,30 @@ tags: ["友盟统计"]
 
 ####三、实践这些原则
 
-<pre class="prettyprint linenums">
-    <!-- 包围其中 -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Demo | Prettify.JS</title>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
+#!/usr/bin/python2.4
+ 
+def fib():
+  '''
+  a generator that produces the fibonacci series's elements
+  '''
+ 
+  a = 1
+  b = 1
+  while True:
+    a, b = a + b, a
+    yield a
+ 
+def nth(series, n):
+  '''
+  returns the nth element of a series,
+  consuming the series' earlier elements.
+  '''
+ 
+  for x in series:
+    n -= 1
+    if n <= 0: return x
+ 
+print nth(fib(), 10)
+ 
+/* not a comment and not keywords: null char true */
 
-</pre>
-
-<code class="prettyprint linenums">
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Demo | Prettify.JS&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Hello, World!&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code>
