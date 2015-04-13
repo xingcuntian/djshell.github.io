@@ -11,7 +11,7 @@ tags: ["友盟统计"]
 
 ###################################################
 #  
-#  功能：为进行python学习，进行入门引导 
+#  功能：python入门引导 
 #        
 ####################################################
 
@@ -55,9 +55,59 @@ if __name__ == '__main__':
 	
 ```
 
+```
+#!/usr/bin/python
+#coding=utf-8
 
 
+###################################################
+#  
+#  功能：python入门引导 
+#        
+####################################################
 
+def dict_test():
+    #初始化字典    
+    sample_dict = {'a':'a','2':'b',3:'c'}
+    print sample_dict
+
+    #获取指定的key的值
+    pop = sample_dict.pop('2')
+    print pop
+    print sample_dict
+
+    get = sample_dict.get('a')
+    print get
+    print sample_dict
+
+    print sample_dict[3]
+
+    #删除指定key的值
+    pop = sample_dict.pop(3)
+    print pop
+    print sample_dict
+
+    #在字典中插入一个值
+    sample_dict.update({3:'c','2':'b'})
+    print sample_dict
+
+    #获取字典长度
+    print len(sample_dict)
+
+    #字典遍历
+    for element in sample_dict:
+        print element,sample_dict[element]
+
+    for (k, v) in sample_dict.items():
+        print "sample_dict[%s] =" % k, v
+
+if __name__ == '__main__':
+    dict_test()
+    
+```
+
+
+>
 - 请尊重本人劳动成功，可以随意转载但保留以下信息 
 - 作者：岁月经年 
 - 时间：2015年4月
