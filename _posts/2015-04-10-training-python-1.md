@@ -4,17 +4,11 @@ category: "python"
 title: "python培训[1]"
 tags: ["友盟统计"]
 ---
-
-
 ###1、前言部分
-
 - os系统：centos6.5
-
 - python:2.7.7 或者 2.7.8
-
 - 扩展要求:
         setuptools ,pip	 ,MySQL-python	
-        
 - 如果你的python版本过低，可以用下面的脚本升级为2.7.7
 - 脚本下载：<http://pan.baidu.com/s/1jGDvFzo>  	
 		
