@@ -44,7 +44,14 @@ tags: ["友盟统计"]
 
 </pre>
 
-<code>  
-def hello()  
-    print "hello"  
-</code>  
+<code class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Demo | Prettify.JS&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code>
