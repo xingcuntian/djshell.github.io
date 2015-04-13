@@ -29,6 +29,10 @@ tags: ["友盟统计"]
 - 以Pythonic为荣 , 以冗余拖沓为耻;
 - 以总结分享为荣 , 以跪求其解为耻;
 
+
+
+![Alt text](images/029_hooded_k_w_1.jpg "Optional title")
+
 ####三、初步感观
 ```
 
@@ -60,4 +64,7 @@ if __name__ == '__main__':
 	print nth(fib(), 10)
 	
 ```
+
+
+
 

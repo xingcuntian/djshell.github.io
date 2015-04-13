@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "python"
-title: "python培训[1]"
+title: "python培训[2]"
 tags: ["友盟统计"]
 ---
 如果你的python版本过低，可以用下面的脚本升级为2.7.7
