@@ -4,11 +4,34 @@ category: "android"
 title: "友盟统计正式包无数据问题"
 tags: ["友盟统计"]
 ---
-若发现debug包运行时有数据上报，而签名打包后无数据上报，则是由于混淆造成的。  
-需要对umeng的jar包的类保持不被混淆，proguard.cfg文件中加入：  
+脚本下载：<http://pan.baidu.com/s/1jGDvFzo>  
 
-    -keep class com.umeng.** { *;}
-    -keep class u.aly.** { *;}
+####一、前言部分
 
+- os系统：centos6.5
 
-（完~）
+- python:2.7.7 或者 2.7.8
+
+- 扩展要求:
+        setuptools ,pip	 ,MySQL-python		
+		
+		  
+
+####二、Pythonic八荣八耻
+
+- 以动手实践为荣 , 以只看不练为耻;
+- 以打印日志为荣 , 以单步跟踪为耻;
+- 以空格缩进为荣 , 以制表缩进为耻;
+- 以单元测试为荣 , 以人工测试为耻;
+- 以模块复用为荣 , 以复制粘贴为耻;
+- 以多态应用为荣 , 以分支判断为耻;
+- 以Pythonic为荣 , 以冗余拖沓为耻;
+- 以总结分享为荣 , 以跪求其解为耻;
+
+####三、实践这些原则
+
+<pre class="prettyprint linenums">
+    <!-- 包围其中 -->
+    def test:
+    	print os.mkdir()
+</pre>
