@@ -30,7 +30,7 @@ tags: ["友盟统计"]
 
 ####三、实践这些原则
 ```
-#!/usr/bin/python2.4
+#!/usr/bin/python2.7
  
 def fib():
   '''
