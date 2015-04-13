@@ -54,9 +54,6 @@ def nth(series, n):
     n -= 1
     if n <= 0: return x
  
-
- 
-
 if __name__ == '__main__':
 	print('Executed from the command line')
 	print nth(fib(), 10)
