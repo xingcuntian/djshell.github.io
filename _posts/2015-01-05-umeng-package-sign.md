@@ -32,8 +32,14 @@ tags: ["友盟统计"]
 
 <pre class="prettyprint linenums">
     <!-- 包围其中 -->
-    import os 
-    
-    def test():
-    	print os.mkdir()
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo | Prettify.JS</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+  </body>
+</html>
+
 </pre>
