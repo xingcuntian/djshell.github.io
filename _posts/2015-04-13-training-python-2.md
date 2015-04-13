@@ -4,14 +4,8 @@ category: "python"
 title: "python培训[2]"
 tags: ["友盟统计"]
 ---
-
-
-
 ####一、List操作
-
-
 ```
-
 #!/usr/bin/python
 # coding=utf-8
 
