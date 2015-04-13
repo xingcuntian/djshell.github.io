@@ -4,60 +4,63 @@ category: "python"
 title: "python培训[2]"
 tags: ["友盟统计"]
 ---
-如果你的python版本过低，可以用下面的脚本升级为2.7.7
-脚本下载：<http://pan.baidu.com/s/1jGDvFzo>  
 
-####一、前言部分
+- 请尊重本人劳动成功，可以随意转载但保留以下信息 
+- 作者：岁月经年 
+- 时间：2015年4月
 
-- os系统：centos6.5
 
-- python:2.7.7 或者 2.7.8
+####一、List操作
 
-- 扩展要求:
-        setuptools ,pip	 ,MySQL-python		
-		
-		  
 
-####二、Pythonic八荣八耻
-
-- 以动手实践为荣 , 以只看不练为耻;
-- 以打印日志为荣 , 以单步跟踪为耻;
-- 以空格缩进为荣 , 以制表缩进为耻;
-- 以单元测试为荣 , 以人工测试为耻;
-- 以模块复用为荣 , 以复制粘贴为耻;
-- 以多态应用为荣 , 以分支判断为耻;
-- 以Pythonic为荣 , 以冗余拖沓为耻;
-- 以总结分享为荣 , 以跪求其解为耻;
-
-####三、初步感观
 ```
 
-#!/usr/bin/python2.7
- 
-def fib():
-  '''
-  a generator that produces the fibonacci series's elements
-  '''
- 
-  a = 1
-  b = 1
-  while True:
-    a, b = a + b, a
-    yield a
- 
-def nth(series, n):
-  '''
-  returns the nth element of a series,
-  consuming the series' earlier elements.
-  '''
- 
-  for x in series:
-    n -= 1
-    if n <= 0: return x
- 
+#!/usr/bin/python
+# coding=utf-8
+
+###################################################
+#  
+#  功能：为进行python学习，进行入门引导 
+#        
+####################################################
+
+#定义函数
+def list_test():
+    #初始化列表
+    sample_list = ['a','b',0,1,3]
+    print sample_list
+      
+    #得到列表中的某一个值
+    value_start = sample_list[1:3]
+    print value_start
+      
+    end_value = sample_list[-1]
+    print end_value
+      
+    #删除列表的第一个值
+    del sample_list[0]
+      
+    #在列表中插入一个值
+    sample_list[0] = ['sample value']
+    sample_list[2] = 'second'
+    sample_list.append('three')
+      
+    #得到列表的长度
+    list_length = len(sample_list)
+    print list_length
+      
+    #列表遍历
+    for element in sample_list:
+        print(element)
+      
+    #用同一个值初始化，形成一个含有六个元素的列表
+    sample_list = ['test']*6
+    for element in sample_list:
+        print(element)
+        
 if __name__ == '__main__':
-	print('Executed from the command line')
-	print nth(fib(), 10)
+    #调用函数
+    list_test()
 	
 ```
 
