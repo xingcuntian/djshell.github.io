@@ -4,9 +4,6 @@ category: "python"
 title: "python培训[3]"
 tags: ["友盟统计"]
 ---
-
-####python基本类型在业务中的应用实践
-
 >
 在python中, list, tuple, dict, set有什么区别, 主要应用在什么样的场景?
 
