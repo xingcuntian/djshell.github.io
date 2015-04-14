@@ -4,6 +4,38 @@ category: "python"
 title: "python培训[2]"
 tags: ["友盟统计"]
 ---
+
+* 定义:
+	* list:链表,有序的项目, 通过索引进行查找,使用方括号”[]”;
+	* tuple:元组,元组将多样的对象集合到一起,不能修改,通过索引进行查找, 使用括号”()”;
+	* dict:字典,字典是一组键(key)和值(value)的组合,通过键(key)进行查找,没有顺序, 使用大括号”{}”;
+	* set:集合,无序,元素只出现一次, 自动去重,使用”set([])”
+	
+
+```
+#样例
+mylist = [1, 2, 3, 4, 'Oh']  
+mytuple = (1, 2, 'Hello', (4, 5))  
+mydict = {'Wang' : 1, 'Hu' : 2, 'Liu' : 4}  
+myset = set(['Wang', 'Hu', 'Liu', 4, 'Wang'])  
+  
+print(mylist)  
+print(mytuple)  
+print(mydict)  
+print(myset)  
+
+```
+* 输出
+
+	* [1, 2, 3, 4, 'Oh']  
+	* (1, 2, 'Hello', (4, 5))  
+	* {'Liu': 4, 'Wang': 1, 'Hu': 2}  
+	* set(['Liu', 4, 'Wang', 'Hu']) 
+	
+
+
+我们重点讲字典和列表
+
 ####一、List操作
 ```
 #!/usr/bin/python
