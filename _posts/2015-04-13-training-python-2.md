@@ -2,7 +2,7 @@
 layout: post
 category: "python"
 title: "python培训[2]"
-tags: ["友盟统计"]
+tags: ["python培训"]
 ---
 
 * 定义:

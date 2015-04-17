@@ -2,7 +2,7 @@
 layout: post
 category: "python"
 title: "python培训[3]"
-tags: ["友盟统计"]
+tags: ["python培训"]
 ---
 >
 在python中, list, tuple, dict, set有什么区别, 主要应用在什么样的场景?

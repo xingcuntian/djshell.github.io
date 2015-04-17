@@ -2,7 +2,7 @@
 layout: post
 category: "python"
 title: "python培训[1]"
-tags: ["友盟统计"]
+tags: ["python培训"]
 ---
 ###1、环境简介
 - os系统：centos6.5
