@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "python"
-title: "python培训[1]"
+title: "python培训[1]－python初步感观"
 tags: ["python培训"]
 ---
 ###1、环境简介

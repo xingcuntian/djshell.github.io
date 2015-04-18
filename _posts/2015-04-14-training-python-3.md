@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "python"
-title: "python培训[3]"
+title: "python培训[3]－list dict在实际中的应用"
 tags: ["python培训"]
 ---
 * 在python中, list, tuple, dict, set有什么区别, 主要应用在什么样的场景?
@@ -17,13 +17,7 @@ tuple, 把一些数据当做一个整体去使用,不能修改;
 dict,使用键值和值进行关联的数据;
 set,数据只出现一次,只关心数据是否出现, 不关心其位置;
 
-
-
-<br><br><br><br>
-
 #### 实践样例
-<br>
-
 ```
 #!/usr/bin/python
 # coding=utf-8

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "python"
-title: "python培训[2]"
+title: "python培训[2]－list dict 基本使用"
 tags: ["python培训"]
 ---
 
