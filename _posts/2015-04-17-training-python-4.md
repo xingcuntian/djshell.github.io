@@ -64,6 +64,10 @@ demo.py在 <http://djshell.github.io/python/training-python-1.html>
 	-  Unnecessary parens after u'print' keyword (superfluous-parens) print 之后多余的小括号
 	-  Missing module docstring (missing-docstring) 没有模块文档说明
 	-  Invalid variable name "a" (invalid-name) 非法的变量
+	-  No space allowed around keyword argument assignment 不要在用于指定
+关键字参数 (keyword argument) 或默认参数值的 '=' 号周围使用空格
+	- Trailing whitespace (trailing-whitespace) 尾随空白，行尾有空白字符，需要删除
+
 <br><br>
 - 按照提示更改代码直到得到10分
 	- Your code has been rated at 10.00/10 (previous run: 10.00/10, +0.00)
