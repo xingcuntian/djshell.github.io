@@ -1,12 +1,11 @@
 ---
 layout: post
 category: "python"
-title: "python培训[5]－ splinter模块实现自动登录微博和qq空间"
+title: "python培训[5]－ splinter自动登录微博和qq空间"
 tags: ["python培训"]
 ---
 * Splinter 可以通过api自动模拟用户行为，可以利用Splinter开发浏览器自动化操作。
 * Splinter:  <https://github.com/cobrateam/splinter>
-
 - 功能：
 	- simple api 接口简单
 	- multi webdrivers (chrome webdriver, firefox webdriver, phantomjs webdriver, zopetestbrowser, - remote webdriver) 多个浏览器驱动
