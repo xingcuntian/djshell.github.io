@@ -17,6 +17,8 @@ tags: ["python培训"]
 
 #### 1.扩展安装：
 * pip install splinter
+* sudo pip install selenium
+* sudo pip install mozmill
 * 要求python2.7+ 
 * 默认使用firefox浏览器，如果需要使用chrom且在mac的情况下可用 brew install chromedriver 安装，不过请使用代理，要不download会失败。
 
