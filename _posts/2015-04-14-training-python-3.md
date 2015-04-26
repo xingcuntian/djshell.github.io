@@ -1,8 +1,8 @@
 ---
 layout: post
 category: "python"
-title: "python培训[3]－list dict在实际中的应用"
-tags: ["python培训"]
+title: "python技术分享[3]－list dict在实际中的应用"
+tags: ["python技术分享"]
 ---
 * 在python中, list, tuple, dict, set有什么区别, 主要应用在什么样的场景?
 * 定义:

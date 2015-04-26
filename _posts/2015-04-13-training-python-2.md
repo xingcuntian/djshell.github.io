@@ -1,8 +1,8 @@
 ---
 layout: post
 category: "python"
-title: "python培训[2]－list dict 基本使用"
-tags: ["python培训"]
+title: "python技术分享[2]－list dict 基本使用"
+tags: ["python技术分享"]
 ---
 
 * 定义:

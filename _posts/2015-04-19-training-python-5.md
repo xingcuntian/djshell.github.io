@@ -1,8 +1,8 @@
 ---
 layout: post
 category: "python"
-title: "python培训[5]－ splinter自动登录微博和qq空间"
-tags: ["python培训"]
+title: "python技术分享[5]－ splinter自动登录微博和qq空间"
+tags: ["python技术分享"]
 ---
 * Splinter 可以通过api自动模拟用户行为，可以利用Splinter开发浏览器自动化操作。
 * Splinter:  <https://github.com/cobrateam/splinter>

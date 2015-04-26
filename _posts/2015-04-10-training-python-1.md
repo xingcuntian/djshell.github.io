@@ -1,8 +1,8 @@
 ---
 layout: post
 category: "python"
-title: "python培训[1]－python初步感观"
-tags: ["python培训"]
+title: "python技术分享[1]－python初步感观"
+tags: ["python技术分享"]
 ---
 ###1、环境简介
 - os系统：centos6.5

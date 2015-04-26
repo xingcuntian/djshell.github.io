@@ -1,8 +1,8 @@
 ---
 layout: post
 category: "python"
-title: "python培训[4]－使用pylint约束代码规范"
-tags: ["python培训"]
+title: "python技术分享[4]－使用pylint约束代码规范"
+tags: ["python技术分享"]
 ---
 * pylint是一个Python代码风格的检查工具, 它依据的标准是Guido van Rossum的PEP8
 * Pylint:  <http://www.logilab.org/project/pylint>
