@@ -7,7 +7,7 @@ title: "关于：About"
 
  - 岁月经年/男/1984
  - 工作年限：从2006年5月21号开始
- - 技术博客：http://djshell.github.io
+ - 技术博客：http://djhull.com
  - Github: http://github.com/djshell
 
 

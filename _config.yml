@@ -10,8 +10,8 @@ paginate: 8
 paginate_path: "page:num"
 
 # presonal config
-domain: www.panxw.com
-title: djshell's Blog
+domain: www.djhull.com
+title: djhull's Blog
 description: FreeBSD,Centos,Python,PHP,MySQL,Redis,MongoDB ......
 author: djshell
 email: djshell#sina.com
