@@ -12,7 +12,7 @@ paginate_path: "page:num"
 # presonal config
 domain: www.djhull.com
 title: djhull's Blog
-description: FreeBSD,Centos,Python,PHP,MySQL,Redis,MongoDB ......
+description: GitHub,FreeBSD,Centos,Python,PHP,MySQL,Redis,MongoDB ......
 author: djshell
 email: djshell#sina.com
 github: djshell
