@@ -10,7 +10,10 @@ tags: ["python技术分享"]
 * sudo pip install mozmill
 * 要求python2.7+ 
 * 默认使用firefox浏览器，如果需要使用chrom且在mac的情况下可用 brew install chromedriver 安装，不过请使用代理，要不download会失败。
+
 #### 2.登录微博代码：
+
+
 ```
 #!/usr/bin/python
 # coding=utf-8
@@ -87,6 +90,7 @@ if __name__ == '__main__':
 ```
 * 效果：<http://pan.baidu.com/s/1hqfAaX2>
 
+#### 4.模块简介：
 * Splinter 可以通过api自动模拟用户行为，可以利用Splinter开发浏览器自动化操作。
 * Splinter:  <https://github.com/cobrateam/splinter>
 - 功能：
