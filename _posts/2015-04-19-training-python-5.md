@@ -4,35 +4,19 @@ category: "python"
 title: "python技术分享[5]－ splinter自动登录微博和qq空间"
 tags: ["python技术分享"]
 ---
-* Splinter 可以通过api自动模拟用户行为，可以利用Splinter开发浏览器自动化操作。
-* Splinter:  <https://github.com/cobrateam/splinter>
-- 功能：
-	- simple api 接口简单
-	- multi webdrivers (chrome webdriver, firefox webdriver, phantomjs webdriver, zopetestbrowser, - remote webdriver) 多个浏览器驱动
-	- css and xpath selectors css和xpath作为选择器
-	- support to iframe and alert 支持iframe和alert
-	- execute javascript 可执行javascript
-	- works with ajax and async javascript 支持javascript的ajax的异步操作
-
-
 #### 1.扩展安装：
 * pip install splinter
 * sudo pip install selenium
 * sudo pip install mozmill
 * 要求python2.7+ 
 * 默认使用firefox浏览器，如果需要使用chrom且在mac的情况下可用 brew install chromedriver 安装，不过请使用代理，要不download会失败。
-
-
 #### 2.登录微博代码：
-
 ```
 #!/usr/bin/python
 # coding=utf-8
-
 """
 利用splinter模块模拟发布微博，仅为QA讲例测试
 """
-
 from splinter.browser import Browser
 import random
 import time
@@ -102,6 +86,16 @@ if __name__ == '__main__':
     splinter(website, qq, pwd)
 ```
 * 效果：<http://pan.baidu.com/s/1hqfAaX2>
+
+* Splinter 可以通过api自动模拟用户行为，可以利用Splinter开发浏览器自动化操作。
+* Splinter:  <https://github.com/cobrateam/splinter>
+- 功能：
+	- simple api 接口简单
+	- multi webdrivers (chrome webdriver, firefox webdriver, phantomjs webdriver, zopetestbrowser, - remote webdriver) 多个浏览器驱动
+	- css and xpath selectors css和xpath作为选择器
+	- support to iframe and alert 支持iframe和alert
+	- execute javascript 可执行javascript
+	- works with ajax and async javascript 支持javascript的ajax的异步操作
 >
 - 请尊重本人劳动成功，可以随意转载但保留以下信息 
 - 作者：岁月经年 
