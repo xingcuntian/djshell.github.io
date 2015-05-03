@@ -9,6 +9,8 @@ title: "关于：About"
  - 工作年限：从2006年5月21号开始
  - 技术博客：http://djhull.com
  - Github: http://github.com/djshell
+ 
+ ![Alt text](/images/cxy.png)
 
 
 ---
