@@ -10,6 +10,9 @@ title: "关于：About"
  - 技术博客：http://djhull.com
  - Github: http://github.com/djshell
  
+ **技术出身，已走管理，祭奠程序员的岁月!**
+ <br>
+ <br>
  ![Alt text](/images/cxy.png)
 
 
