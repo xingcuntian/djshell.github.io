@@ -25,8 +25,8 @@ tags: ["shell技术分享"]
 	- ⑥ 举例: echo "65" | awk '{ printf ("%c\n",$0) }' // 将打印 A awk 'BEGIN{printf "%.4f\n",999}' //将打印 999.0000 awk 'BEGIN{printf "2 number:%8.4f%8.2f",999,888}' // 将打印 2 number:999.0000 888.000
 
 #2､awk实例
+<pre><code class="shell">
 
-```
 awk 用法：awk ' pattern {action} '
 
 变量名 含义
@@ -494,5 +494,5 @@ awk '/Iowa/,/Montana/' # 大小写敏感
 awk NF
 awk '/./'
 
-```
+</code></pre>
 
