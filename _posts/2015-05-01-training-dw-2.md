@@ -17,7 +17,7 @@ tags: ["大数据技术分享"]
 <br>
 ![Alt text](/images/product-marts.jpg)
 <br>
-![Alt text](/images/dw.svg)
+![Alt text](/images/dw.jpg)
 
 >
 - 请尊重本人劳动成功，可以随意转载但保留以下信息 
