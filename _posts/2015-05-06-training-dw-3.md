@@ -105,6 +105,7 @@ public final class custom_get_json_object extends UDF {
 - 执行后，select custom_get_json_object(sls_extract_others,'$.content.content.zhi') from z limit 1;
 - 好吧报错，说是找不到第三方fastjson
 - 问曰：不支持第三方包，必须用odps自己的包，好吧看了一眼果然有一json－1.0.jar，心想大爷的我怎么知道你有哪些方法，只能把包全加到lib中，import试，真佩服自己，又过了一遍jar，看见有gson，终于有希望了，这个是常用的包哈，快速扫了一遍方法，改吧，改吧，改的一点都不能依赖阿里之外的第三方包，爷！fastjson不是阿里的么........
+
 ```
 package playcrab.com.aliyun.odps.udf;
 
