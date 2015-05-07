@@ -301,11 +301,13 @@ class DistCacheTableExample(object):
 
 当一个Query中有多个相同UDF，并且他们的参数也都一致时，这些UDF在执行时会被优化成只执行一次。例如：
 
+```
 random.seed(12345)
 @annotate('bigint->bigint')
 class MyRand(object):
     def evaluate(self, a):
         return random.randint(0, 10)
+```
 
 实现一个Rand函数，希望每次调用Rand时返回一个随机值。
 
@@ -344,8 +346,9 @@ image
 odps.udf.int(value[, silent=True])
 2. UDF
 
-# 定义一个new-style class，并实现 evaluate 方法
+####定义一个new-style class，并实现 evaluate 方法
 
+```
 from odps.udf import annotate
 @annotate("bigint,bigint->bigint")
 class MyPlus(object):
@@ -353,6 +356,7 @@ class MyPlus(object):
        if None in (arg0, arg1):
            return None
        return arg0 + arg1
+```
 
 3. UDAF
 
