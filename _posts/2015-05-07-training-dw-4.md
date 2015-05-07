@@ -324,7 +324,8 @@ class MyRand(object):
 
 > set odps.sql.udf.optimize.reuse=false;
 > select MyRand(c_int_a), MyRand(c_int_a) from udf_test;
-> 
+
+
 +------------+------------+
 
 | _c0        | _c1        |
