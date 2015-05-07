@@ -4,29 +4,19 @@ category: "python"
 title: "阿里云[3]－ ODPS自定义UDF解析json字符串"
 tags: ["大数据技术分享"]
 ---
-
 ####ODPS_ele—UDF Python API
 #####自定义函数(UDF)
-
 - UDF全称User Defined Function，即用户自定义函数。ODPS提供了很多内建函数来满足用户的计算需求，同时用户还可以通过创建自定义函数来满足不同的计算需求。UDF在使用上与普通的 SQL内建函数 类似。
-
 - 在ODPS中，用户可以扩展的UDF有三种，分别是：
-
 - UDF 分类 |  描述
-
 - User Defined Scalar Function 通常也称之为UDF
     - 自定义函数，准确的说是用户自定义标量函数 (User Defined Scalar Function)。UDF的输入与输 出是一对一的关系，即读入一行数据， 写出一条输出值。
-
 - UDAF(User Defined Aggregation Function)
     - 自定义聚合函数，其输入与输出是多对一的关系， 即将多条输入记录聚合成一条输出值。可以与 SQL中的Group By语句联用。具体语法请参考聚合函数 。
-
 - UDTF(User Defined Table Valued Function)
     - 自定义表函数，是用来解决一次函数调用输出 多行数据场景的，也是唯一能返回多个字段的自定 义函数。而UDF及UDAF只能一次计算输出一条 返回值。
-
 - 注解
-
 	- UDF广义的说法代表了自定义标量函数，自定义聚合函数及自定义表函数三种类型的自定义函数的集合。狭义来说，仅代表用户自定义标量函数。文档会经常使用这一名词，请读者根据文档上下文判断具体含义。
-
 - 受限环境
 	- ODPS UDF的Python版本为2.7，并以沙箱模式执行用户代码，即代码是在一个受限的运行环境中执行的，在这个环境中，被禁止的行为包括：
 
