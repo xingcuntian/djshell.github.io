@@ -127,7 +127,7 @@ public class custom_get_json_object extends UDF {
 	 * @return
 	 */
 	private static Map<String, String> parseData(String data) {
-	
+
 		GsonBuilder gb = new GsonBuilder();
 		Gson g = gb.create();
 		Map<String, String> map = g.fromJson(data,
@@ -136,17 +136,21 @@ public class custom_get_json_object extends UDF {
 		return map;
 	}
 
-	public static String json2object(String jsonStr, String key) {
+	public static String json2object(String jsonStr, String key, int is_last) {
 		try {
-			//JSON转map后get指定key
+			// JSON转map后get指定key
 			return (String) parseData(jsonStr).get(key);
 
 		} catch (Exception e) {
 			//System.out.println(e.toString());
-			//本身就是json串，变为map 指定key
+			// 本身就是json串，变为map 指定key
 			Gson gson = new Gson();
 			Map depts = gson.fromJson(jsonStr, Map.class);
-			return  gson.toJson(depts.get(key));
+			if (is_last == 0) {
+				return gson.toJson(depts.get(key));
+			} else {
+				return depts.get(key).toString();
+			}
 		}
 	}
 
@@ -154,15 +158,20 @@ public class custom_get_json_object extends UDF {
 	// a, Long b)
 	public String evaluate(String jsonStr, String index) {
 		//String index;
-		//index = "$.content.content.tag";
+		//index = "$.content.game";
 		String[] keys = index.split("\\.");
 
 		for (int i = 1; i < keys.length; i++) {
-
-			jsonStr = json2object(jsonStr, keys[i]);
+			//System.out.println(keys.length);
+			//System.out.println(i);
+			if (i < keys.length - 1) {
+				jsonStr = json2object(jsonStr, keys[i], 0);
+			} else {
+				jsonStr = json2object(jsonStr, keys[i], 1);
+			}
 
 		}
-		return jsonStr;
+		return jsonStr.toString();
 
 	}
 
