@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "python"
-title: "阿里云[4]－ ODPS自定义UDF解析json字符串"
+title: "阿里云[4]－ ODPS UDF Python API"
 tags: ["大数据技术分享"]
 ---
 ####ODPS_ele—UDF Python API
