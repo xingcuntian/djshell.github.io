@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "python"
-title: "python技术分享[12]－ Flask实现restful接口"
+title: "python技术分享[13]－ Flask实现restful接口"
 tags: ["python技术分享"]
 ---
 
