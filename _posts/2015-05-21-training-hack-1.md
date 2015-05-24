@@ -1,7 +1,7 @@
 ---
 layout: post
-category: "python"
-title: "RedTigers-Hackit[第一关]"
+category: "hack"
+title: "RedTigersHackit[第一关]"
 tags: ["sqlmap技术分享"]
 ---
 
