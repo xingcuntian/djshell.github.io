@@ -1,7 +1,7 @@
 ---
 layout: post
 category: "asm"
-title: "asm[第一关]"
+title: "asm[第一关]"
 tags: ["asm"]
 ---
 
