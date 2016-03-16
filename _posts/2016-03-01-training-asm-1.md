@@ -15,17 +15,8 @@ tags: ["asm"]
 
 ###3.常用寄存器简介：			
 <img src="http://www.djhull.com/images/asm_1.png"> 
-
-
-
-
-###参考内容：
-
-* [http://my.oschina.net/moooofly/blog/152584](http://my.oschina.net/moooofly/blog/152584)
-
   
 >
 - 请尊重本人劳动成功，可以随意转载但保留以下信息 
 - 作者：岁月经年 
 - 时间：2016年03月
-- 
