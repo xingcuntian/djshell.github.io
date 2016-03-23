@@ -38,17 +38,11 @@ tags: ["phpext"]
 在php_initest.h中打开全局变量设置块的注释，改成自己相要的变量如下
 
 ```c
-/*
-  	Declare any global variables you may need between the BEGIN
-	and END macros here:
-*/
 
 ZEND_BEGIN_MODULE_GLOBALS(initest)
 	zend_long  userage;
 	char	  *username;
 ZEND_END_MODULE_GLOBALS(initest)
-
-/**/
 
 ```
 
@@ -56,46 +50,22 @@ ZEND_END_MODULE_GLOBALS(initest)
 
 ```c
 
-/*
- * If you declare any globals in php_initest.h uncomment this:
- * 这个地方是需要去掉注释的地方，声明全局变量
- */
-
 ZEND_DECLARE_MODULE_GLOBALS(initest)
 
-
-/* {{{ PHP_INI
- */
-/*
- * Remove comments and fill if you need to have entries in php.ini
- * 这个地方需要去掉注释，声明两条INI内容 设置INI默认参数
- */
- 
 PHP_INI_BEGIN()
     STD_PHP_INI_ENTRY("initest.userage","1", PHP_INI_ALL, OnUpdateLong, userage, zend_initest_globals, initest_globals)
     STD_PHP_INI_ENTRY("initest.username","username", PHP_INI_ALL, OnUpdateString, username, zend_initest_globals, initest_globals)
 PHP_INI_END()
 
-/**/
-/* }}} */
 
-/* {{{ PHP_MINIT_FUNCTION
- * 注册ini
- */
 PHP_MINIT_FUNCTION(initest)
 {
-	/* If you have INI entries, uncomment these lines
-	REGISTER_INI_ENTRIES();
-	*/
 
 	REGISTER_INI_ENTRIES();
 	return SUCCESS;
 }
-/* }}} */
 
-/* {{{ PHP_MSHUTDOWN_FUNCTION
- * 卸载ini
- */
+
 PHP_MSHUTDOWN_FUNCTION(initest)
 {
 	/* uncomment this line if you have INI entries
@@ -105,24 +75,13 @@ PHP_MSHUTDOWN_FUNCTION(initest)
 	UNREGISTER_INI_ENTRIES();
 	return SUCCESS;
 }
-/* }}} */
 
-
-/* {{{ php_initest_init_globals
- * 初始化全局变量
- */
-/* Uncomment this function if you have INI entries*/
 static void php_initest_init_globals(zend_initest_globals *initest_globals)
 {
 	//initest_globals->userage = 1;
 	//initest_globals->username = "testusername";
 }
-/**/
-/* }}} */
 
-/*
- * 增加一个新的打印函数，用于打印全局变
- */
 PHP_FUNCTION(ini_echo)
 {
 	    php_printf("username:%s\n",INITEST_G(username));
@@ -130,17 +89,12 @@ PHP_FUNCTION(ini_echo)
 }
 
 
-/* {{{ initest_functions[]
- * 注册上面的打印函数
- * Every user visible function must have an entry in initest_functions[].
- */
+
 const zend_function_entry initest_functions[] = {
 	PHP_FE(confirm_initest_compiled,	NULL)		/* For testing, remove later. */
 	PHP_FE(ini_echo,	NULL)		/* For testing, remove later. */
 	PHP_FE_END	/* Must be the last line in initest_functions[] */
 };
-/* }}} */
-
 
 ```
 
