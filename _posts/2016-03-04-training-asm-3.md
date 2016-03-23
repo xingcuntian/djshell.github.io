@@ -1,132 +1,175 @@
 ---
 layout: post
-category: "asm"
-title: "asm[第三关]"
-tags: ["asm"]
+category: "phpext"
+title: "php读取php.ini"
+tags: ["phpext"]
 ---
 
-### 1.变量赋值
-```asm 
-.386
-.model flat, stdcall
+### 1.需要实现的细节
 
-include    windows.inc
-include    kernel32.inc
-include    masm32.inc
-include    debug.inc
+* 在php.ini加上
+* [initest] 
+* initest.username=test
+* nitest.userage=99
+* 
+* 实现一个initest类 ，实现一个ini_echo方法，打印相关内容
 
-includelib kernel32.lib
-includelib masm32.lib
-includelib debug.lib
+### 2.initest扩展
 
-.const ;常量
-    v1 dd 11
-    
-.data ;初始化变量
-    v2 dd 22
-   
-    
-.data? ;未初始化变量
-    v3 dd ?
+#### 2.1创建类的扩展：
 
-.code
+[root@bogon ext]# cd /usr/local/src/php-7.0.3/ext
 
-main proc
-	
-	PrintDec v1  ;11
-	PrintDec v2  ;22
-	PrintDec v3  ;0
-	
-	mov eax, 33	;未初始化的值赋值
-	mov v3, eax
-	
-	PrintDec v1  ;11
-	PrintDec v2  ;22
-	PrintDec v3  ;33
-	
-	ret
+[root@bogon ext]# ./ext_skel --extname=initest
 
-main endp
+#### 2.2 修改配置
+[root@bogon ext]# vim initest/config.m4
 
-end main
+	dnl PHP_ARG_WITH(initest, for initest support,
+	dnl Make sure that the comment is aligned:
+	dnl [  --with-initest             Include initest support])
+	更改为：
+	PHP_ARG_WITH(initest, for initest support,
+	dnl Make sure that the comment is aligned:
+	[  --with-initest             Include initest support])
+
+
+#### 2.3 实现代码
+在php_initest.h中打开全局变量设置块的注释，改成自己相要的变量如下
+
+```c
+/*
+  	Declare any global variables you may need between the BEGIN
+	and END macros here:
+*/
+
+ZEND_BEGIN_MODULE_GLOBALS(initest)
+	zend_long  userage;
+	char	  *username;
+ZEND_END_MODULE_GLOBALS(initest)
+
+/**/
 
 ```
 
+在initest.c打开相关注释，并添加相关代码
 
-### 2. 数组赋值：
-```asm
-.386
-.model flat, stdcall
+```c
 
+/*
+ * If you declare any globals in php_initest.h uncomment this:
+ * 这个地方是需要去掉注释的地方，声明全局变量
+ */
 
-include    windows.inc
-include    kernel32.inc
-include    masm32.inc
-include    debug.inc
-includelib kernel32.lib
-includelib masm32.lib
-includelib debug.lib
+ZEND_DECLARE_MODULE_GLOBALS(initest)
 
 
-.data
-	;声明并初始化有三个元素的 DWORD 数组; 该数组每个元素是 4 字节
-	val dd 11,22,33
-.code
-main proc
-	
-	mov eax, val[4*0]
-	PrintDec eax		;11
-	
-	mov eax, val[4*1]
-	PrintDec eax		;22	
-	
-	
-	mov eax, val[4*2]
-	PrintDec eax		;33
-	
-	ret
-
-main endp
-end main
-```
-
-#### 3. 伪指令 DUP 与数组
-```asm
-.386
-.model flat,stdcall
-
-
-include windows.inc
-include kernel32.inc
-include masm32.inc
-include debug.inc
-
-includelib kernel32.lib
-includelib masm32.lib
-includelib debug.lib
-
-.data
-
-    ;声明有三个元素的 DWORD 数组, 并把每个元素初始化为 9
-    v1 dd 4 dup(9)
-
-.data?
-
-    ;声明有三个元素的 DWORD 数组, 无初始化; 对全局变量, 没有初始化的将用 0 填充
-    v2 dd 3 dup(?)
+/* {{{ PHP_INI
+ */
+/*
+ * Remove comments and fill if you need to have entries in php.ini
+ * 这个地方需要去掉注释，声明两条INI内容 设置INI默认参数
+ */
  
-.code
+PHP_INI_BEGIN()
+    STD_PHP_INI_ENTRY("initest.userage","1", PHP_INI_ALL, OnUpdateLong, userage, zend_initest_globals, initest_globals)
+    STD_PHP_INI_ENTRY("initest.username","username", PHP_INI_ALL, OnUpdateString, username, zend_initest_globals, initest_globals)
+PHP_INI_END()
 
-main proc
+/**/
+/* }}} */
+
+/* {{{ PHP_MINIT_FUNCTION
+ * 注册ini
+ */
+PHP_MINIT_FUNCTION(initest)
+{
+	/* If you have INI entries, uncomment these lines
+	REGISTER_INI_ENTRIES();
+	*/
+
+	REGISTER_INI_ENTRIES();
+	return SUCCESS;
+}
+/* }}} */
+
+/* {{{ PHP_MSHUTDOWN_FUNCTION
+ * 卸载ini
+ */
+PHP_MSHUTDOWN_FUNCTION(initest)
+{
+	/* uncomment this line if you have INI entries
+	UNREGISTER_INI_ENTRIES();
+	*/
+
+	UNREGISTER_INI_ENTRIES();
+	return SUCCESS;
+}
+/* }}} */
+
+
+/* {{{ php_initest_init_globals
+ * 初始化全局变量
+ */
+/* Uncomment this function if you have INI entries*/
+static void php_initest_init_globals(zend_initest_globals *initest_globals)
+{
+	//initest_globals->userage = 1;
+	//initest_globals->username = "testusername";
+}
+/**/
+/* }}} */
+
+/*
+ * 增加一个新的打印函数，用于打印全局变
+ */
+PHP_FUNCTION(ini_echo)
+{
+	    php_printf("username:%s\n",INITEST_G(username));
+	    php_printf("userage:%d\n",INITEST_G(userage));
+}
+
+
+/* {{{ initest_functions[]
+ * 注册上面的打印函数
+ * Every user visible function must have an entry in initest_functions[].
+ */
+const zend_function_entry initest_functions[] = {
+	PHP_FE(confirm_initest_compiled,	NULL)		/* For testing, remove later. */
+	PHP_FE(ini_echo,	NULL)		/* For testing, remove later. */
+	PHP_FE_END	/* Must be the last line in initest_functions[] */
+};
+/* }}} */
+
+
+```
+
+
+#### 2.4 编译
+	* [root@bogon hello]# [root@localhost person]# ./configure && make && make install
+
+
+#### 2.5 扩展安装
+	[initest]
+	initest.userage=99
+	initest.username=test
 	
-	    DumpMem offset v1, 16  ;09 00 00 00 - 09 00 00 00 - 09 00 00 00 - 09 00 00 00
-	    DumpMem offset v2, 12  ;00 00 00 00 - 00 00 00 00 - 00 00 00 00 - 00 00 00 00
+	extension=initest.so
 
-	ret
 
-main endp
-end main
 
+##### 2.6 扩展使用
+
+```shell
+[root@bogon tests]# cat test.php
+<?php
+
+ini_echo();
+
+[root@bogon tests]# php test.php
+username:test
+userage:99
+```
 ```
 
 - 请尊重本人劳动成功，可以随意转载但保留以下信息 
