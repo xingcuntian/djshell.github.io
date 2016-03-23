@@ -1,0 +1,129 @@
+---
+layout: post
+category: "phpext"
+title: "php7 编写函数[1]"
+tags: ["phpext"]
+---
+
+### 1.环境安装
+
+* centos 7.1
+* php 7.0.3
+
+##### 1.1 RPM安装PHP
+* rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm 
+* yum install php70w
+* php -v 看一下 7.0.3
+* php -m 看一下 php70w-devel, php70w-opcache模块安装没有，没有的话安装一下 
+
+##### 1.2 下载php的源码包
+* http://hk1.php.net/distributions/php-7.0.3.tar.gz
+* 把源码放在/usr/local/src/下解压
+
+
+### 2.第一个扩展
+
+#### 2.1 输入：
+
+[root@bogon ext]# cd /usr/local/src/php-7.0.3/ext
+
+[root@bogon ext]# ./ext_skel --extname=hello
+#### 2.1 输出：
+Creating directory hello
+	
+Creating basic files: config.m4 config.w32 .gitignore hello.c php_hello.h
+CREDITS EXPERIMENTAL tests/001.phpt hello.php [done].
+	
+To use your new extension, you will have to execute the following steps:
+	
+1.  $ cd ..
+2.  $ vi ext/hello/config.m4
+3.  $ ./buildconf
+4.  $ ./configure --[with|enable]-hello
+5.  $ make
+6.  $ ./sapi/cli/php -f ext/hello/hello.php
+7.  $ vi ext/hello/hello.c
+8.  $ make
+	
+Repeat steps 3-6 until you are satisfied with ext/hello/config.m4 and
+step 6 confirms that your module is compiled into PHP. Then, start writing
+code and repeat the last two steps as often as necessary.
+
+#### 2.2 输入：
+[root@bogon ext]# tree hello/
+
+#### 2.2 输出：
+0. hello/
+1. ├── config.m4
+2. ├── config.w32
+3. ├── CREDITS
+4. ├── EXPERIMENTAL
+5. ├── hello.c
+6. ├── hello.php
+7. ├── php_hello.h
+8. └── tests
+9. 占个位└── 001.phpt
+
+#### 2.3 修改配置
+[root@bogon ext]# vim hello/config.m4
+
+* dnl PHP_ARG_WITH(hello, for hello support,
+* dnl Make sure that the comment is aligned:
+* dnl [  --with-hello             Include hello support])
+* 更改为：
+* PHP_ARG_WITH(hello, for hello support,
+* dnl Make sure that the comment is aligned:
+* [  --with-hello             Include hello support])
+
+
+#### 2.4 实现代码
+	* 新增 声明函数 PHP_FE(hello,	NULL)；
+	* 
+		- 	const zend_function_entry hello_functions[] = {
+		- 		PHP_FE(hello,	NULL)		/* For testing, remove later. */
+		- 		PHP_FE(confirm_hello_compiled,	NULL)
+		- 	   /* For testing, remove later. */
+		-		PHP_FE_END	/* Must be the last line in hello_functions[] */
+		-	};
+	*  新增 函数实现 PHP_FE(hello,	NULL)；放在PHP_FUNCTION(confirm_hello_compiled)上面
+	*  
+		- PHP_FUNCTION(hello)
+		- {
+		- 	zend_string *strg;
+		-	strg = strpprintf(0, "hello word");
+		-	RETURN_STR(strg);
+		- }
+
+#### 2.4 编译
+	* [root@bogon hello]# pwd
+	* /usr/local/src/php-7.0.3/ext/hello
+	* [root@bogon hello]# ./configure
+	* ............. 
+	* [root@bogon hello]# make
+	* .............
+	* [root@bogon hello]# ll modules/
+	* -rw-r--r--. 1 root root   915 Mar 16 21:58 hello.la
+	* -rwxr-xr-x. 1 root root 31422 Mar 16 21:58 hello.so
+
+#### 2.5 扩展安装
+	1. 改更php.ini 加上[hello] extenstion=hello.so
+	2. 安放扩展so文件，如果你不知道PHP扩展在哪，可以用如下方法找
+	3. [root@bogon hello]# find / -name opcache.so
+	4. cp modules/hello.so /usr/lib64/php/modules
+	5. php -m|grep hello 会出现hello字样
+
+
+##### 2.6 扩展使用
+
+	[root@bogon tests]# cat test.php
+	<?php
+	
+	echo hello();
+	echo "\r\n";
+	
+	[root@bogon tests]# php test.php
+	hello word  
+>
+- 请尊重本人劳动成功，可以随意转载但保留以下信息 
+- 作者：岁月经年 
+- 时间：2016年03月
