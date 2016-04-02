@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "python"
+category: "数据仓库"
 title: "阿里云[3]－ ODPS自定义UDF解析json字符串"
-tags: ["大数据技术分享"]
+tags: ["数据仓库"]
 ---
 
 #### 1.吐槽阿里ODPS：

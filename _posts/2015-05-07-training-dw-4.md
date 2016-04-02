@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "python"
+category: "数据仓库"
 title: "阿里云[4]－ ODPS UDF Python API"
-tags: ["大数据技术分享"]
+tags: ["数据仓库"]
 ---
 ####ODPS_ele—UDF Python API
 #####自定义函数(UDF)

@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "python"
+category: "数据仓库"
 title: "阿里云[2]－ 基于ODPS+SLS+DPC搭建数据平台"
-tags: ["大数据技术分享"]
+tags: ["数据仓库"]
 ---
 
 #### 1.名词解释：
