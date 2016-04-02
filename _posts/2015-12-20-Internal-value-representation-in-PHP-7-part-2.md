@@ -2,7 +2,7 @@
 layout: post
 title:  "[译]变量在 PHP7 内部的实现（二）"
 date:   2015-12-20 22:54:48
-category: phpext
+category: php7扩展开发
 ---
 
 *本文第一部分和第二均翻译自Nikita Popov(nikic，PHP 官方开发组成员，柏林科技大学的学生) 的[博客](http://nikic.github.io/)。为了更符合汉语的阅读习惯，文中并不会逐字逐句的翻译。*
