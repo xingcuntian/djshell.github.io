@@ -1,8 +1,8 @@
 ---
 layout: post
-category: "python"
+category: "hack"
 title: "RedTigers-Hackit[第一关]"
-tags: ["sqlmap技术分享"]
+tags: ["hack"]
 ---
 
 #### 1.安装扩展
