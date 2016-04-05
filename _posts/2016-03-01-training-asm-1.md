@@ -6,7 +6,6 @@ tags: ["asm"]
 ---
 
 ### 1.安装RadASM工具
-
 * https://svn.code.sf.net/p/fbedit/code/RadASM30/Release/RadASM.zip
 * 有汉化的2.2 可以网上找找
 
