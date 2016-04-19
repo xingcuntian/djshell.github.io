@@ -118,6 +118,7 @@ title: "关于：About"
 
 ## 演讲和讲义
   - 2014年GITC全球互联网大会运维专场演讲：[站在“云”端看运维](http://www.thegitc.com)
+  - 2016年 彭博社游戏专题[游戏运维编年史](http://mobile.bbwc.cn/article/10064749/1/cat_11?utm_source=weixin&from=singlemessage&isappinstalled=0&articleToken=kpfh1c)
   
 # 感谢曾经
   - 曾经的做过技术论坛 [www.dophp.net](www.dophp.net)在2007年8月-2009年10月左右关闭,
