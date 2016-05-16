@@ -5,77 +5,6 @@ title: "LNMP压力测试关注点"
 tags: ["ant"]
 ---
 
-<style type="text/css">
-.spinner {
-  margin: 100px auto;
-  width: 50px;
-  height: 70px;
-  text-align: center;
-  font-size: 10px;
-}
- 
-.spinner > div {
-  background-color: #67CF22;
-  height: 100%;
-  width: 6px;
-  display: inline-block;
-   
-  -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
-  animation: stretchdelay 1.2s infinite ease-in-out;
-}
- 
-.spinner .rect2 {
-  -webkit-animation-delay: -1.1s;
-  animation-delay: -1.1s;
-}
- 
-.spinner .rect3 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
-}
- 
-.spinner .rect4 {
-  -webkit-animation-delay: -0.9s;
-  animation-delay: -0.9s;
-}
- 
-.spinner .rect5 {
-  -webkit-animation-delay: -0.8s;
-  animation-delay: -0.8s;
-}
-
-.spinner .rect6 {
-  -webkit-animation-delay: -0.7s;
-  animation-delay: -0.7s;
-}
-
-@-webkit-keyframes stretchdelay {
-  0%, 40%, 100% { -webkit-transform: scaleY(0.4) } 
-  20% { -webkit-transform: scaleY(1.0) }
-}
- 
-@keyframes stretchdelay {
-  0%, 40%, 100% {
-    transform: scaleY(0.4);
-    -webkit-transform: scaleY(0.4);
-  }  20% {
-    transform: scaleY(1.0);
-    -webkit-transform: scaleY(1.0);
-  }
-}
-</style>
-
----
----
-
-<div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
-  <div class="rect6"></div>
-</div>
 
 ---
 ---
@@ -210,17 +139,6 @@ tags: ["ant"]
 				inode-nr：索引节点句柄（inode handle）的使用数量
 				pty-nr：使用的pty数量
 				
----
----				
-				
-<div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
-  <div class="rect6"></div>
-</div>
 	
 ---
 ---
@@ -308,17 +226,6 @@ tags: ["ant"]
 				+writing), 意思就是 Nginx 已经处理完正在等候下一次请求指令的驻留连接.
 				
 	
----
----				
-				
-<div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
-  <div class="rect6"></div>
-</div>
 	
 ---
 ---
@@ -372,17 +279,7 @@ tags: ["ant"]
 			conn: 连接数
 			time: 当前时间
 
----
----				
-				
-<div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
-  <div class="rect6"></div>
-</div>
+
 	
 ---
 ---
@@ -448,18 +345,7 @@ tags: ["ant"]
 	
 ---
 ---				
-				
-<div class="spinner">
-  <div class="rect1"></div>
-  <div class="rect2"></div>
-  <div class="rect3"></div>
-  <div class="rect4"></div>
-  <div class="rect5"></div>
-  <div class="rect6"></div>
-</div>
-	
----
----
+
 
 #### MySQL
 
@@ -491,7 +377,7 @@ tags: ["ant"]
 		[ "${MYSQL_PASSWORD}" = '' ] &&  MYSQL_PASSWORD=xxx  #mysql的密码
 		[ "${MYSQL_Host}"     = '' ] &&  MYSQL_Host=10.10.10.10    内网ip
 		[ "${var}" = '' ] && echo ""||${mysql} -h${MYSQL_Host} -u${MYSQL_USER} -p${MYSQL_PASSWORD} -e 'show global status'|grep -v Variable_name|grep "\b${var}\b"|awk '{print $2}'
-  
+ 
 >
 - 请尊重本人劳动成功，可以随意转载但保留以下信息 
 - 作者：岁月经年 
