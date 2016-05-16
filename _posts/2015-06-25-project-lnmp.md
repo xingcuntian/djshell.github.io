@@ -224,6 +224,7 @@ tags: ["ant"]
 	
 ---
 ---
+#### PHPFPM NGINX
 	- php性能监控
 	
 		- phpfpm 配置
@@ -322,7 +323,7 @@ tags: ["ant"]
 ---
 ---
 	
-	
+#Mongodb
 	- mongotop
 	
        		ns                           total        read       write
@@ -385,7 +386,7 @@ tags: ["ant"]
 	
 ---
 ---
-
+#### Redis
 - 1、redis-benchmark 
 
 		redis基准信息，redis服务器性能检测 
@@ -460,7 +461,7 @@ tags: ["ant"]
 ---
 ---
 
-- MySQL
+#### MySQL
 
 - 硬盘测速
 
@@ -490,8 +491,6 @@ tags: ["ant"]
 		[ "${MYSQL_PASSWORD}" = '' ] &&  MYSQL_PASSWORD=xxx  #mysql的密码
 		[ "${MYSQL_Host}"     = '' ] &&  MYSQL_Host=10.10.10.10    内网ip
 		[ "${var}" = '' ] && echo ""||${mysql} -h${MYSQL_Host} -u${MYSQL_USER} -p${MYSQL_PASSWORD} -e 'show global status'|grep -v Variable_name|grep "\b${var}\b"|awk '{print $2}'
-
-
   
 >
 - 请尊重本人劳动成功，可以随意转载但保留以下信息 
