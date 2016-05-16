@@ -1,3 +1,9 @@
+---
+layout: post
+category: "ant"
+title: "MySQLy调优过程"
+tags: ["LNMP压力测试关注点"]
+---
 
 <style type="text/css">
 .spinner {
@@ -74,7 +80,7 @@
 ---
 ---
 - 场景描述：
-	由于游戏登录充值服务，需要压测承压能力，所以简单罗列一下，需要用到的点。
+	由于游戏登录充值服务，需要压测承压能力，使用LNMP+MONGO+REDIS 所以简单罗列一下，需要用到的点。
 - 安装工具
 	- yum install  nload.x86_64 -y
 	- yum install  sysstat -y
