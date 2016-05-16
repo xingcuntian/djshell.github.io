@@ -1,8 +1,8 @@
 ---
 layout: post
 category: "ant"
-title: "MySQLy调优过程"
-tags: ["LNMP压力测试关注点"]
+title: "LNMP压力测试关注点"
+tags: ["ant"]
 ---
 
 <style type="text/css">
@@ -492,3 +492,9 @@ tags: ["LNMP压力测试关注点"]
 		[ "${var}" = '' ] && echo ""||${mysql} -h${MYSQL_Host} -u${MYSQL_USER} -p${MYSQL_PASSWORD} -e 'show global status'|grep -v Variable_name|grep "\b${var}\b"|awk '{print $2}'
 
 
+  
+>
+- 请尊重本人劳动成功，可以随意转载但保留以下信息 
+- 作者：岁月经年 
+- 时间：2015年6月
+- 
